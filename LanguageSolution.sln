@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanguageGo", "LanguageGo\LanguageGo.csproj", "{8B5A4002-2149-4E47-A92A-BB5BFC77A5C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppClassic", "Test Apps\Wpf\WpfAppClassic\WpfAppClassic.csproj", "{45AEC18D-DB90-4270-86E5-45B456CB4426}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test Apps", "Test Apps", "{22AAF860-A68C-4FFB-8DF6-2385609D6198}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppMvvm", "Test Apps\Wpf\WpfAppMvvm\WpfAppMvvm.csproj", "{F869D97A-4E98-4C7A-A9EC-B95501F1BADE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{3D323198-60F0-483E-BE4A-FD5F4907ACA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xamarin", "Xamarin", "{1FDC587E-FEB1-4A2C-A0D4-7A59FE1C1289}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XamarinAppClassic", "XamarinAppClassic", "{45EF8319-42E9-4095-8914-0EE539FA5711}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XamarinAppMvvm", "XamarinAppMvvm", "{1C07D887-4667-4622-8E6E-1A3BC33B4B48}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B5A4002-2149-4E47-A92A-BB5BFC77A5C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B5A4002-2149-4E47-A92A-BB5BFC77A5C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B5A4002-2149-4E47-A92A-BB5BFC77A5C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B5A4002-2149-4E47-A92A-BB5BFC77A5C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45AEC18D-DB90-4270-86E5-45B456CB4426}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45AEC18D-DB90-4270-86E5-45B456CB4426}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45AEC18D-DB90-4270-86E5-45B456CB4426}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45AEC18D-DB90-4270-86E5-45B456CB4426}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F869D97A-4E98-4C7A-A9EC-B95501F1BADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F869D97A-4E98-4C7A-A9EC-B95501F1BADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F869D97A-4E98-4C7A-A9EC-B95501F1BADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F869D97A-4E98-4C7A-A9EC-B95501F1BADE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{45AEC18D-DB90-4270-86E5-45B456CB4426} = {3D323198-60F0-483E-BE4A-FD5F4907ACA0}
+		{F869D97A-4E98-4C7A-A9EC-B95501F1BADE} = {3D323198-60F0-483E-BE4A-FD5F4907ACA0}
+		{3D323198-60F0-483E-BE4A-FD5F4907ACA0} = {22AAF860-A68C-4FFB-8DF6-2385609D6198}
+		{1FDC587E-FEB1-4A2C-A0D4-7A59FE1C1289} = {22AAF860-A68C-4FFB-8DF6-2385609D6198}
+		{45EF8319-42E9-4095-8914-0EE539FA5711} = {1FDC587E-FEB1-4A2C-A0D4-7A59FE1C1289}
+		{1C07D887-4667-4622-8E6E-1A3BC33B4B48} = {1FDC587E-FEB1-4A2C-A0D4-7A59FE1C1289}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {57D3BFF2-A86E-4DE8-B37D-092F7313BFCF}
+	EndGlobalSection
+EndGlobal
