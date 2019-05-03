@@ -23,6 +23,25 @@ namespace WpfAppClassic
         public MainWindow()
         {
             InitializeComponent();
+
+            List<string> ListStuff = new List<string>();
+            ListStuff.Add("House");
+            ListStuff.Add("Sea");
+            ListStuff.Add("Cat");
+            ListStuff.Add("Dog");
+            ListStuff.Add("Bread");
+            ListStuff.Add("Mushroom");
+            ListStuff.Add("Car");
+            ListStuff.Add("Pencil");
+            ListStuff.Add("Road");
+
+            cbo.ItemsSource = ListStuff;
+            cbo.SelectedIndex = 0;
+        }
+
+        private void Btn_Click(object sender, RoutedEventArgs e)
+        {
+            tblock_result.Text = "You clicked!";
         }
     }
 }

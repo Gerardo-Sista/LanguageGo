@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <StackPanel Margin="50">
+            <TextBlock Name="tblock" Text="Select something from combobox"  Margin="5"/>
+            <ComboBox Name="cbo" />
+            <Button Name="btn" Content="Click me" Click="Btn_Click" Margin="30" HorizontalAlignment="Center" Padding="10" />
+            <TextBlock Name="tblock_result" FontSize="70" Text="-----" HorizontalAlignment="Center" />
+        </StackPanel>
     </Grid>
 </Window>
