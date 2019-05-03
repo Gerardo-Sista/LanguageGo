@@ -1,20 +1,25 @@
-﻿using System;
+﻿using LanguageGo;
+using LanguageGoWPF;
+using MyAppLanguages;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WpfAppClassic
 {
+    public class StuffItem : INotifyPropertyChanged
+    {
+        public string Name { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+        }
+    }
+
     /// <summary>
     /// Logica di interazione per MainWindow.xaml
     /// </summary>
@@ -22,18 +27,19 @@ namespace WpfAppClassic
     {
         public MainWindow()
         {
+            MyLanguage.Current = new EnglishLanguage();
             InitializeComponent();
 
-            List<string> ListStuff = new List<string>();
-            ListStuff.Add("House");
-            ListStuff.Add("Sea");
-            ListStuff.Add("Cat");
-            ListStuff.Add("Dog");
-            ListStuff.Add("Bread");
-            ListStuff.Add("Mushroom");
-            ListStuff.Add("Car");
-            ListStuff.Add("Pencil");
-            ListStuff.Add("Road");
+            List<StuffItem> ListStuff = new List<StuffItem>();
+            ListStuff.Add(new StuffItem() { Name = MyLanguage.Current.House_Title }.AddToLanguage());
+            ListStuff.Add(new StuffItem() { Name = MyLanguage.Current.Sea_Title }.AddToLanguage());
+            ListStuff.Add(new StuffItem() { Name = MyLanguage.Current.Cat_Title }.AddToLanguage());
+            ListStuff.Add(new StuffItem() { Name = MyLanguage.Current.Car_Title }.AddToLanguage());
+            ListStuff.Add(new StuffItem() { Name = MyLanguage.Current.Bread_Title }.AddToLanguage());
+            ListStuff.Add(new StuffItem() { Name = MyLanguage.Current.Mushroom_Title }.AddToLanguage());
+            ListStuff.Add(new StuffItem() { Name = MyLanguage.Current.Car_Title }.AddToLanguage());
+            ListStuff.Add(new StuffItem() { Name = MyLanguage.Current.Pencil_Title }.AddToLanguage());
+            ListStuff.Add(new StuffItem() { Name = MyLanguage.Current.Road_Title }.AddToLanguage());
 
             cbo.ItemsSource = ListStuff;
             cbo.SelectedIndex = 0;
@@ -41,7 +47,19 @@ namespace WpfAppClassic
 
         private void Btn_Click(object sender, RoutedEventArgs e)
         {
-            tblock_result.Text = "You clicked!";
+            //bind it in language in code behind
+            tblock_result.AddToLanguageProperty(nameof(tblock_result.Text)).Text = MyLanguage.Current.Clicked_Title;
+            //tblock_result.Text = "You clicked!";
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MyLanguage.Current = new EnglishLanguage();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MyLanguage.Current = new PersianLanguage();
         }
     }
 }

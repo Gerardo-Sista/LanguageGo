@@ -4,19 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{45AEC18D-DB90-4270-86E5-45B456CB4426}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>WpfAppClassic</RootNamespace>
-    <AssemblyName>WpfAppClassic</AssemblyName>
+    <ProjectGuid>{7771665D-434A-4B95-A1C1-9C9DB1997B64}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>LanguageGoWPF</RootNamespace>
+    <AssemblyName>LanguageGoWPF</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,7 +24,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -51,24 +48,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="Language.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -92,20 +72,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\LanguageGoWPF\LanguageGoWPF.csproj">
-      <Project>{7771665d-434a-4b95-a1c1-9c9db1997b64}</Project>
-      <Name>LanguageGoWPF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\LanguageGo\LanguageGo.csproj">
-      <Project>{8b5a4002-2149-4e47-a92a-bb5bfc77a5c3}</Project>
+    <ProjectReference Include="..\LanguageGo\LanguageGo.csproj">
+      <Project>{8B5A4002-2149-4E47-A92A-BB5BFC77A5C3}</Project>
       <Name>LanguageGo</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\MyAppLanguages\MyAppLanguages.csproj">
-      <Project>{4EB8CFD2-D2BF-4AE1-A9A2-5509B312CE03}</Project>
-      <Name>MyAppLanguages</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

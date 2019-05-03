@@ -4,14 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppClassic"
+		xmlns:lng="clr-namespace:LanguageGoWPF;assembly=LanguageGoWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" FontFamily="{lng:Language Key=FontName}">
     <Grid>
         <StackPanel Margin="50">
-            <TextBlock Name="tblock" Text="Select something from combobox"  Margin="5"/>
-            <ComboBox Name="cbo" />
-            <Button Name="btn" Content="Click me" Click="Btn_Click" Margin="30" HorizontalAlignment="Center" Padding="10" />
+			<TextBlock Name="tblock"  Text="{lng:Language Key=Select_something_from_combobox_Title}" Margin="5"/>
+            <ComboBox Name="cbo" DisplayMemberPath="Name" />
+			<Button Name="btn" Content="{lng:Language Key=ClickMe_Title}" Click="Btn_Click" Margin="30" HorizontalAlignment="Center" Padding="10" />
             <TextBlock Name="tblock_result" FontSize="70" Text="-----" HorizontalAlignment="Center" />
+			<StackPanel Orientation="Horizontal">
+				<Button Content="English" Click="Button_Click"/>
+				<Button Content="Persian" Click="Button_Click_1"/>
+			</StackPanel>
         </StackPanel>
     </Grid>
 </Window>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28803.352
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanguageGo", "LanguageGo\LanguageGo.csproj", "{8B5A4002-2149-4E47-A92A-BB5BFC77A5C3}"
 EndProject
@@ -23,13 +23,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinClassic.Android", "T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinClassic.iOS", "Test Apps\Xamarin\XamarinAppClassic\XamarinClassic\XamarinClassic.iOS\XamarinClassic.iOS.csproj", "{003F3564-7B98-43F7-ADE0-311D8CD69960}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinClassic", "Test Apps\Xamarin\XamarinAppClassic\XamarinClassic\XamarinClassic\XamarinClassic.csproj", "{43543A62-E730-44C1-B217-B8D03B8AC533}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamarinClassic", "Test Apps\Xamarin\XamarinAppClassic\XamarinClassic\XamarinClassic\XamarinClassic.csproj", "{43543A62-E730-44C1-B217-B8D03B8AC533}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinMvvm.Android", "Test Apps\Xamarin\XamarinAppMvvm\XamarinMvvm\XamarinMvvm.Android\XamarinMvvm.Android.csproj", "{0BBFD8A4-8E13-4C65-BD61-154D447705BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinMvvm.iOS", "Test Apps\Xamarin\XamarinAppMvvm\XamarinMvvm\XamarinMvvm.iOS\XamarinMvvm.iOS.csproj", "{6F9E16B6-0447-4D80-AA0B-C97F921EB2C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinMvvm", "Test Apps\Xamarin\XamarinAppMvvm\XamarinMvvm\XamarinMvvm\XamarinMvvm.csproj", "{ECAEA3A2-85BF-482D-A818-47879B4CA259}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamarinMvvm", "Test Apps\Xamarin\XamarinAppMvvm\XamarinMvvm\XamarinMvvm\XamarinMvvm.csproj", "{ECAEA3A2-85BF-482D-A818-47879B4CA259}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageGoWPF", "LanguageGoWPF\LanguageGoWPF.csproj", "{7771665D-434A-4B95-A1C1-9C9DB1997B64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAppLanguages", "MyAppLanguages\MyAppLanguages.csproj", "{4EB8CFD2-D2BF-4AE1-A9A2-5509B312CE03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -157,6 +161,30 @@ Global
 		{ECAEA3A2-85BF-482D-A818-47879B4CA259}.Release|iPhone.Build.0 = Release|Any CPU
 		{ECAEA3A2-85BF-482D-A818-47879B4CA259}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{ECAEA3A2-85BF-482D-A818-47879B4CA259}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{7771665D-434A-4B95-A1C1-9C9DB1997B64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7771665D-434A-4B95-A1C1-9C9DB1997B64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7771665D-434A-4B95-A1C1-9C9DB1997B64}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{7771665D-434A-4B95-A1C1-9C9DB1997B64}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{7771665D-434A-4B95-A1C1-9C9DB1997B64}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{7771665D-434A-4B95-A1C1-9C9DB1997B64}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{7771665D-434A-4B95-A1C1-9C9DB1997B64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7771665D-434A-4B95-A1C1-9C9DB1997B64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7771665D-434A-4B95-A1C1-9C9DB1997B64}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{7771665D-434A-4B95-A1C1-9C9DB1997B64}.Release|iPhone.Build.0 = Release|Any CPU
+		{7771665D-434A-4B95-A1C1-9C9DB1997B64}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{7771665D-434A-4B95-A1C1-9C9DB1997B64}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{4EB8CFD2-D2BF-4AE1-A9A2-5509B312CE03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EB8CFD2-D2BF-4AE1-A9A2-5509B312CE03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EB8CFD2-D2BF-4AE1-A9A2-5509B312CE03}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{4EB8CFD2-D2BF-4AE1-A9A2-5509B312CE03}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{4EB8CFD2-D2BF-4AE1-A9A2-5509B312CE03}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{4EB8CFD2-D2BF-4AE1-A9A2-5509B312CE03}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{4EB8CFD2-D2BF-4AE1-A9A2-5509B312CE03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EB8CFD2-D2BF-4AE1-A9A2-5509B312CE03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EB8CFD2-D2BF-4AE1-A9A2-5509B312CE03}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{4EB8CFD2-D2BF-4AE1-A9A2-5509B312CE03}.Release|iPhone.Build.0 = Release|Any CPU
+		{4EB8CFD2-D2BF-4AE1-A9A2-5509B312CE03}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{4EB8CFD2-D2BF-4AE1-A9A2-5509B312CE03}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -174,6 +202,7 @@ Global
 		{0BBFD8A4-8E13-4C65-BD61-154D447705BA} = {1C07D887-4667-4622-8E6E-1A3BC33B4B48}
 		{6F9E16B6-0447-4D80-AA0B-C97F921EB2C7} = {1C07D887-4667-4622-8E6E-1A3BC33B4B48}
 		{ECAEA3A2-85BF-482D-A818-47879B4CA259} = {1C07D887-4667-4622-8E6E-1A3BC33B4B48}
+		{4EB8CFD2-D2BF-4AE1-A9A2-5509B312CE03} = {22AAF860-A68C-4FFB-8DF6-2385609D6198}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {57D3BFF2-A86E-4DE8-B37D-092F7313BFCF}
