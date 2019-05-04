@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanguageGo", "LanguageGo\LanguageGo.csproj", "{8B5A4002-2149-4E47-A92A-BB5BFC77A5C3}"
 EndProject
@@ -33,7 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamarinMvvm", "Test Apps\Xa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageGoWPF", "LanguageGoWPF\LanguageGoWPF.csproj", "{7771665D-434A-4B95-A1C1-9C9DB1997B64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAppLanguages", "MyAppLanguages\MyAppLanguages.csproj", "{4EB8CFD2-D2BF-4AE1-A9A2-5509B312CE03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyAppLanguages", "MyAppLanguages\MyAppLanguages.csproj", "{4EB8CFD2-D2BF-4AE1-A9A2-5509B312CE03}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Existing Projects", "Existing Projects", "{C8E0081F-9CF4-4B45-A291-2E0E1F373DCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
