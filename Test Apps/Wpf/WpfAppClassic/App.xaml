@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:WpfAppClassic"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
-    </Application.Resources>
+		<FontFamily x:Key="MyFontFamily">pack://application:,,,/WpfAppClassic;Component/Fonts/#Rakoon Personal Use</FontFamily>
+	</Application.Resources>
 </Application>

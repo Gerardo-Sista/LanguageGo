@@ -6,7 +6,7 @@ namespace MyAppLanguages
 {
     public class EnglishLanguage : ILanguage
     {
-        public string FontName { get; set; } = "Broadway";
+        public string FontName { get; set; } = "MyFontFamily";
 
         public string Select_something_from_combobox_Title { get; set; } = "Select something from combobox ...";
 

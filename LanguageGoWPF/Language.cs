@@ -44,7 +44,13 @@ namespace LanguageGoWPF
         {
             if (name == "FontFamily")
             {
-                return new FontFamily(value.ToString());
+                var fontName = value.ToString();
+                if (Application.Current.TryFindResource(fontName) is FontFamily font)
+                {
+                    return font;
+                }
+                else
+                    return new FontFamily(fontName);
             }
             else
                 return value;

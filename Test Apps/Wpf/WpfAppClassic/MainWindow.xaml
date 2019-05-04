@@ -9,8 +9,8 @@
         Title="MainWindow" Height="450" Width="800" FontFamily="{lng:Language Key=FontName}">
     <Grid>
         <StackPanel Margin="50">
-			<TextBlock Name="tblock"  Text="{lng:Language Key=Select_something_from_combobox_Title}" Margin="5"/>
-            <ComboBox Name="cbo" DisplayMemberPath="Name" />
+			<TextBlock Name="tblock" Text="{lng:Language Key=Select_something_from_combobox_Title}" Margin="5"/>
+			<ComboBox Name="cbo" DisplayMemberPath="Name" />
 			<Button Name="btn" Content="{lng:Language Key=ClickMe_Title}" Click="Btn_Click" Margin="30" HorizontalAlignment="Center" Padding="10" />
             <TextBlock Name="tblock_result" FontSize="70" Text="-----" HorizontalAlignment="Center" />
 			<StackPanel Orientation="Horizontal">
