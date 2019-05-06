@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		     xmlns:lng="clr-namespace:LanguageGoXamarin;assembly=LanguageGoXamarin"
+             x:Class="XamarinAppClassic.MainPage" >
+
+	<ScrollView>
+		<StackLayout Margin="50">
+			<Label x:Name="tblock" FontFamily="{lng:Language Key=FontName}" Text="{lng:Language Key=Select_something_from_combobox_Title}" Margin="5"/>
+			<ListView x:Name="cbo" >
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<Label FontFamily="{lng:Language Key=FontName}" Text="{Binding Name}"/>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			<Button FontFamily="{lng:Language Key=FontName}" x:Name="btn" Text="{lng:Language Key=ClickMe_Title}" Clicked="Btn_Click" Margin="30" HorizontalOptions="Center" Padding="10" />
+			<Label FontFamily="{lng:Language Key=FontName}" x:Name="tblock_result" FontSize="70" Text="-----" HorizontalOptions="Center" />
+			<StackLayout Orientation="Horizontal">
+				<Button FontFamily="{lng:Language Key=FontName}" Text="English" Clicked="Button_Click"/>
+				<Button FontFamily="{lng:Language Key=FontName}" Text="Persian" Clicked="Button_Click_1"/>
+			</StackLayout>
+		</StackLayout>
+	</ScrollView>
+
+</ContentPage>

@@ -2,7 +2,8 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace XamarinClassic
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+namespace XamarinAppClassic
 {
     public partial class App : Application
     {
