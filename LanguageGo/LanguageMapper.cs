@@ -71,7 +71,7 @@ namespace LanguageGo
         {
             if (Current != null)
                 return (string)Current.GetType().GetProperty(key).GetValue(Current);
-            return "**Language value not found!";
+            return "**Language value not found!**";
 
         }
         /// <summary>
