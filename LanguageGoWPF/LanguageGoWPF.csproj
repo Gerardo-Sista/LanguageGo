@@ -73,7 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LanguageGo\LanguageGo.csproj">
-      <Project>{8B5A4002-2149-4E47-A92A-BB5BFC77A5C3}</Project>
+      <Project>{4ced88b2-2a14-4128-849b-da7d7527d9b5}</Project>
       <Name>LanguageGo</Name>
     </ProjectReference>
   </ItemGroup>

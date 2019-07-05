@@ -67,10 +67,15 @@ namespace LanguageGo
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public static string GetValue(string key)
+        public static object GetValue(string key)
         {
             if (Current != null)
-                return (string)Current.GetType().GetProperty(key).GetValue(Current);
+            {
+                PropertyInfo property = Current.GetType().GetProperty(key);
+                if (property == null)
+                   throw new Exception($"Language key {key} not found!");
+                return property.GetValue(Current);
+            }
             return "**Language value Not Found!";
 
         }
@@ -81,7 +86,7 @@ namespace LanguageGo
         {
             foreach (IUpdateLanguage item in LanguagesElements)
             {
-                string newValue = GetValue(item.Key);
+                object newValue = GetValue(item.Key);
                 item.UpdateValue(newValue);
             }
 
@@ -94,24 +99,23 @@ namespace LanguageGo
                         try
                         {
                             object value = property.GetValue(item);
-                            if (value is string)
+
+                            object newValue = FindProperyValueInPreviousLanguage(value);
+                            if (newValue != null)
+                                property.SetValue(item, newValue);
+                            if (item is INotifyPropertyChanged changed)
                             {
-                                string newValue = FindProperyValueInPreviousLanguage(value);
-                                if (newValue != null)
-                                    property.SetValue(item, newValue);
-                                if (item is INotifyPropertyChanged changed)
-                                {
-                                    FieldInfo field = changed.GetType().GetField("PropertyChanged", BindingFlags.Instance | BindingFlags.NonPublic);
-                                    MulticastDelegate multicastDelegate = field.GetValue(changed) as MulticastDelegate;
-                                    if (multicastDelegate == null)
-                                        continue;
+                                FieldInfo field = changed.GetType().GetField("PropertyChanged", BindingFlags.Instance | BindingFlags.NonPublic);
+                                MulticastDelegate multicastDelegate = field.GetValue(changed) as MulticastDelegate;
+                                if (multicastDelegate == null)
+                                    continue;
 
-                                    Delegate[] invocationList = multicastDelegate.GetInvocationList();
+                                Delegate[] invocationList = multicastDelegate.GetInvocationList();
 
-                                    foreach (Delegate invocationMethod in invocationList)
-                                        invocationMethod.DynamicInvoke(new[] { item, new PropertyChangedEventArgs(property.Name) });
-                                }
+                                foreach (Delegate invocationMethod in invocationList)
+                                    invocationMethod.DynamicInvoke(new[] { item, new PropertyChangedEventArgs(property.Name) });
                             }
+
                         }
                         catch (Exception ex)
                         {
@@ -130,23 +134,21 @@ namespace LanguageGo
                         try
                         {
                             object value = property.GetValue(item);
-                            if (value is string)
+
+                            object newValue = FindProperyValueInPreviousLanguage(value);
+                            if (newValue != null)
+                                property.SetValue(item, newValue);
+                            if (item is INotifyPropertyChanged changed)
                             {
-                                string newValue = FindProperyValueInPreviousLanguage(value);
-                                if (newValue != null)
-                                    property.SetValue(item, newValue);
-                                if (item is INotifyPropertyChanged changed)
-                                {
-                                    FieldInfo field = changed.GetType().GetField("PropertyChanged", BindingFlags.Instance | BindingFlags.NonPublic);
-                                    MulticastDelegate multicastDelegate = field.GetValue(changed) as MulticastDelegate;
-                                    if (multicastDelegate == null)
-                                        return;
+                                FieldInfo field = changed.GetType().GetField("PropertyChanged", BindingFlags.Instance | BindingFlags.NonPublic);
+                                MulticastDelegate multicastDelegate = field.GetValue(changed) as MulticastDelegate;
+                                if (multicastDelegate == null)
+                                    return;
 
-                                    Delegate[] invocationList = multicastDelegate.GetInvocationList();
+                                Delegate[] invocationList = multicastDelegate.GetInvocationList();
 
-                                    foreach (Delegate invocationMethod in invocationList)
-                                        invocationMethod.DynamicInvoke(new[] { item, new PropertyChangedEventArgs(property.Name) });
-                                }
+                                foreach (Delegate invocationMethod in invocationList)
+                                    invocationMethod.DynamicInvoke(new[] { item, new PropertyChangedEventArgs(property.Name) });
                             }
                         }
                         catch (Exception ex)
@@ -158,14 +160,14 @@ namespace LanguageGo
             }
         }
 
-        private static string FindProperyValueInPreviousLanguage(object value)
+        private static object FindProperyValueInPreviousLanguage(object value)
         {
             foreach (PropertyInfo property in PreviousLanguage.GetType().GetProperties())
             {
                 object val = property.GetValue(PreviousLanguage);
                 if (val == value)
                 {
-                    return (string)Current.GetType().GetProperty(property.Name).GetValue(Current);
+                    return Current.GetType().GetProperty(property.Name).GetValue(Current);
                 }
             }
             return null;

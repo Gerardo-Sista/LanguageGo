@@ -1,6 +1,7 @@
 ﻿using LanguageGo;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Markup;
@@ -37,6 +38,14 @@ namespace LanguageGoWPF
                 Property = target.TargetProperty;
             }
             LanguageMapper.AddElement(this);
+            //var prop = (target.TargetProperty as DependencyProperty);
+            //var descriptor = DependencyPropertyDescriptor.FromName(prop.Name, Target.GetType(), Target.GetType());
+
+            //var action = new EventHandler((s, e) =>
+            //{
+
+            //});
+            //descriptor.AddValueChanged(target, action);
             return GetValue(target.TargetProperty.ToString(), LanguageMapper.GetValue(Key));
         }
 
@@ -77,7 +86,8 @@ namespace LanguageGoWPF
 
                     // Check whether the target object can be accessed from the
                     // current thread, and use Dispatcher.Invoke if it can't
-
+                    if (obj == null)
+                        return;
                     if (obj.CheckAccess())
                         updateAction();
                     else
@@ -85,8 +95,12 @@ namespace LanguageGoWPF
                 }
                 else // _targetProperty is PropertyInfo
                 {
-                    PropertyInfo prop = Property as PropertyInfo;
-                    prop.SetValue(Target, value, null);
+                    if (Property is PropertyInfo prop)
+                        prop.SetValue(Target, value, null);
+                    else if (Property is MethodInfo method)
+                    {
+                        method.Invoke(Target, new object[] {Target, value });
+                    }
                 }
             }
         }
