@@ -11,7 +11,7 @@ namespace LanguageGo
         public static T AddToLanguage<T>(this T obj)
         {
             if (!(obj is INotifyPropertyChanged))
-                throw new Exception("your class is not inheritance of INotifyPropertyChanged");
+                throw new Exception("Your class doesn't inherit from INotifyPropertyChanged");
             if (!LanguageMapper.CustomObjects.Contains(obj))
                 LanguageMapper.CustomObjects.Add(obj);
             return obj;
@@ -71,7 +71,7 @@ namespace LanguageGo
         {
             if (Current != null)
                 return (string)Current.GetType().GetProperty(key).GetValue(Current);
-            return "**Language value Not Found!";
+            return "**Language value not found!";
 
         }
         /// <summary>
